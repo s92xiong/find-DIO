@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React, { useRef } from "react";
 import './App.css';
+import findCharacter from "./components/logic/findCharacter";
+import Navbar from "./components/UI/Navbar";
+import waldo from "./images/waldo.jpg";
 
 function App() {
+
+  // Obtain reference to background image
+  const imgRef = useRef();
+
+  const getCoordinates = (e) => {
+    // Get current width & height of image from useRef hook
+    const imgWidth = Number(imgRef.current.width);
+    const imgHeight = Number(imgRef.current.height);
+
+    const navbarOffset = 70; // Height of navbar (pixels)
+
+    // Get x & y coordinates (e.g. pageX in pixels), calculate % relative to img width/height
+    const x = e.pageX / imgWidth * 100;
+    const y = (e.pageY - navbarOffset) / imgHeight * 100;
+    
+    findCharacter(x, y);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <img 
+        src={waldo} 
+        className="waldo-background" 
+        alt=""
+        onClick={getCoordinates}
+        ref={imgRef}
+      />
     </div>
   );
 }
