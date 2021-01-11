@@ -5,7 +5,7 @@
 .navbar {
   width: 100vw;
   height: 70px;
-  background: #570815;
+  background: #2f2953;
   color: #ffffff;
   display: flex;
   justify-content: space-around;
@@ -28,7 +28,7 @@
 .modal-button {
   width: 40px;
   height: 40px;
-  background-color: #34882cb6;
+  background: #e41235bb;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -38,7 +38,11 @@
 }
 
 .modal-button:hover {
-  background-color: #34882c;
+  background: #e41235;
+}
+
+.button-active {
+  background: #e41235;
 }
 
 /* --------- STYLE POPUP MODAL AND ITS CHILD ELEMENTS --------- */
@@ -51,18 +55,18 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  background: #570815; /* Keep same background color as navbar */
+  background: #2f2953; /* Keep same background color as navbar */
 }
 
 .character {
   display: flex;
   align-items: center;
-  transition: 200ms;
+  transition: 300ms;
   padding-left: 15px;
 }
 
 .character:hover {
-  background-color: #34882cb6;
+  transform: scale(1.1);
 }
 
 .character-img {
@@ -74,10 +78,10 @@
 .dio-img {
   padding: 0 7px 0 15px;
 }
+
 .spike-img {
   padding: 0 7px 0 23px;
 }
-
 
 .character-info {
   margin-left: 20px;
@@ -88,9 +92,23 @@
 
 .character-name {
   font-size: 1.15rem;
-  margin: 5px 0 15px 0;
+  margin: 15px 0 12px 0;
 }
 
+.character-info p {
+  line-height: 24px;
+}
+
+.character-status {
+  font-size: 12px;
+  color: #ff6f6f;
+}
+
+.character-found {
+  color: #31e031;
+}
+
+/* ----- MOBILE PORTRAIT VIEW -----  */
 
 @media (max-width: 500px) {
   .navbar {
@@ -117,15 +135,21 @@
     padding: 0px;
   }
 
+  .character:hover {
+    transform: none;
+  }
+
   .character img {
     height: 95px;
     margin: 20px 0 20px 20px;
   }
 
-  .anime {
+  .character-info p {
     font-size: 10px;
   }
 }
+
+/* ----- MOBILE LANDSCAPE VIEW -----  */
 
 @media (max-height: 500px) {
   .popup-modal {
@@ -141,11 +165,15 @@
     margin-left: 30px;
   }
 
+  .character:hover {
+    transform: none;
+  }
+
   .character-name {
     font-size: 22px;
   }
 
-  .anime {
-    font-size: 15px;
+  .character-info p {
+    font-size: 14px;
   }
 }

@@ -17,7 +17,7 @@ function OpenModalButton() {
   return (
     <div className="modal-button-container">
       <OutsideClickHandler onOutsideClick={closeModal}>
-        <div className="modal-button" onClick={openModal}>
+        <div className={(modalOpen) ? "modal-button button-active" : "modal-button"} onClick={openModal}>
           <h2>3</h2>
         </div>
       </OutsideClickHandler>

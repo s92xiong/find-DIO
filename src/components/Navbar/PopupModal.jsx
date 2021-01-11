@@ -11,7 +11,8 @@ function PopupModal() {
         <img src={dioImg} alt="" className="character-img dio-img" />
         <div className="character-info">
           <h3 className="character-name">DIO</h3>
-          <p className="anime">JoJo's Bizarre Adventure</p>
+          <p>JoJo's Bizarre Adventure</p>
+          <p className="character-status">Not yet found</p>
         </div>
       </div>
 
@@ -19,7 +20,8 @@ function PopupModal() {
         <img src={edImg} alt="" className="character-img edward-img" />
         <div className="character-info">
           <h3 className="character-name">Edward</h3>
-          <p className="anime">Full Metal Alchemist</p>
+          <p>Full Metal Alchemist</p>
+          <p className="character-status">Not yet found</p>
         </div>
       </div>
 
@@ -27,7 +29,8 @@ function PopupModal() {
         <img src={spikeImg} alt="" className="character-img spike-img" />
         <div className="character-info">
           <h3 className="character-name">Spike</h3>
-          <p className="anime">Cowboy Bebop</p>
+          <p >Cowboy Bebop</p>
+          <p className="character-status">Not yet found</p>
         </div>
       </div>
   
