@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
 
+/* --------- STYLE NAVBAR --------- */
 .navbar {
   width: 100vw;
   height: 70px;
   background: #570815;
-  color: white;
+  color: #ffffff;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: 'Libre Baskerville', serif;
+  /* font-family: 'Libre Baskerville', serif; */
   font-family: 'Days One', serif;
   font-size: 15px;
   position: fixed;
@@ -17,12 +18,14 @@
   left: 0;
 }
 
-.navbar-modal-button {
+/* --------- STYLE MODAL BUTTON IN NAVBAR --------- */
+
+.modal-button-container {
   position: relative;
   user-select: none; /* Remove highlight */
 }
 
-.background-circle {
+.modal-button {
   width: 40px;
   height: 40px;
   background-color: #34882cb6;
@@ -34,60 +37,47 @@
   transition: 200ms;
 }
 
-.background-circle:hover {
+.modal-button:hover {
   background-color: #34882c;
 }
 
-.bg-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* --------- STYLE POPUP MODAL AND ITS CHILD ELEMENTS --------- */
 
-.navbar-modal {
-  position: absolute;
+.popup-modal {
+  position: absolute; /* Position div relative to .modal-button  */
   top: 54px;
   right: 0;
   width: 420px;
   height: auto;
   display: flex;
   flex-direction: column;
-  background: #570815;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  background: #570815; /* Keep same background color as navbar */
 }
 
-.img-div {
+.character {
   display: flex;
   align-items: center;
   transition: 200ms;
   padding-left: 15px;
 }
 
-.img-div:hover {
+.character:hover {
   background-color: #34882cb6;
 }
 
-.img-div img {
+.character-img {
   height: 120px;
   margin: 25px;
 }
 
-/* Vertically align character images in popup */
+/* Vertically align DIO and Spike's images relative to Ed */
 .dio-img {
-  padding: 0 7px 0 17px;
+  padding: 0 7px 0 15px;
 }
-
 .spike-img {
-  padding: 0 7px 0 25px;
+  padding: 0 7px 0 23px;
 }
 
-/* Spacing for character and anime */
 
 .character-info {
   margin-left: 20px;
@@ -96,24 +86,25 @@
   font-family: 'Days One', serif;
 }
 
-.character-info h3 {
+.character-name {
   font-size: 1.15rem;
   margin: 5px 0 15px 0;
 }
+
 
 @media (max-width: 500px) {
   .navbar {
     font-size: 9px;
   }
 
-  .background-circle {
+  .modal-button {
     width: 30px;
     height: 30px;
     font-size: 13px;
   }
 
   /* Modal is centered in the middle of the screen, below the navbar */
-  .navbar-modal {
+  .popup-modal {
     position: fixed;
     top: 70px;
     right: 10vw;
@@ -122,12 +113,39 @@
     overflow: auto;
   }
 
-  .img-div {
+  .character {
     padding: 0px;
   }
 
-  .img-div img {
+  .character img {
     height: 95px;
     margin: 20px 0 20px 20px;
+  }
+
+  .anime {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 500px) {
+  .popup-modal {
+    position: fixed;
+    top: 70px;
+    right: 10vw;
+    width: 80vw;
+    height: 300px;
+    overflow: auto;
+  }
+
+  .character {
+    margin-left: 30px;
+  }
+
+  .character-name {
+    font-size: 22px;
+  }
+
+  .anime {
+    font-size: 15px;
   }
 }
