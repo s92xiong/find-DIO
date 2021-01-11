@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import './App.css';
-import findCharacter from "./components/logic/findCharacter";
-import Navbar from "./components/UI/Navbar";
-import waldo from "./images/waldo.jpg";
+import findCharacter from "./logic/findCharacter";
+import Navbar from "./components/Navbar/Navbar";
+import backgroundImg from "./images/background.jpg";
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <Navbar />
       <img 
-        src={waldo} 
+        src={backgroundImg} 
         className="waldo-background" 
         alt=""
         onClick={getCoordinates}

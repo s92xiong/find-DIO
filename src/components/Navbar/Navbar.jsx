@@ -1,14 +1,13 @@
 import React from 'react';
 import "./Navbar.css";
+import NavbarModal from './NavbarModal';
 
 function Navbar() {
   return (
     <div className="navbar">
-      <h1>Where's Waldo?</h1>
+      <h1>Where's DIO?</h1>
       <h1>00:00</h1>
-      <div className="background-circle">
-        <h2>3</h2>
-      </div>
+      <NavbarModal />
     </div>
   );
 }

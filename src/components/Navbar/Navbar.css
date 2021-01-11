@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
+.navbar {
+  width: 100vw;
+  height: 70px;
+  background: #570815;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'Days One', serif;
+  font-size: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar-modal-button {
+  position: relative;
+  user-select: none; /* Remove highlight */
+}
+
+.background-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #34882cb6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.background-circle:hover {
+  background-color: #34882c;
+}
+
+.bg-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-modal {
+  position: absolute;
+  top: 54px;
+  right: 0;
+  width: 420px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: #570815;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.img-div {
+  display: flex;
+  align-items: center;
+  transition: 200ms;
+  padding-left: 15px;
+}
+
+.img-div:hover {
+  background-color: #34882cb6;
+}
+
+.img-div img {
+  height: 120px;
+  margin: 25px;
+}
+
+/* Vertically align character images in popup */
+.dio-img {
+  padding: 0 7px 0 17px;
+}
+
+.spike-img {
+  padding: 0 7px 0 25px;
+}
+
+/* Spacing for character and anime */
+
+.character-info {
+  margin-left: 20px;
+  padding-bottom: 40px;
+  /* font-family: 'Libre Baskerville', serif; */
+  font-family: 'Days One', serif;
+}
+
+.character-info h3 {
+  font-size: 1.15rem;
+  margin: 5px 0 15px 0;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    font-size: 9px;
+  }
+
+  .background-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  /* Modal is centered in the middle of the screen, below the navbar */
+  .navbar-modal {
+    position: fixed;
+    top: 70px;
+    right: 10vw;
+    width: 80vw;
+    height: 300px;
+    overflow: auto;
+  }
+
+  .img-div {
+    padding: 0px;
+  }
+
+  .img-div img {
+    height: 95px;
+    margin: 20px 0 20px 20px;
+  }
+}
