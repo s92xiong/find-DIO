@@ -3,7 +3,7 @@ import dioImg from "../../images/dio.png";
 import spikeImg from "../../images/spike.png";
 import edImg from "../../images/ed.png";
 
-function PopupModal() {
+function CharacterModal() {
   return (
     <div className="popup-modal">
 
@@ -38,4 +38,4 @@ function PopupModal() {
   );
 }
 
-export default PopupModal;
+export default CharacterModal;

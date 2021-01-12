@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import './App.css';
 import findCharacter from "./logic/findCharacter";
 import Navbar from "./components/Navbar/Navbar";
@@ -9,30 +9,72 @@ function App() {
   // Obtain reference to background image
   const imgRef = useRef();
 
-  const getCoordinates = (e) => {
+  // eslint-disable-next-line no-unused-vars
+  const [chars, setChars] = useState(["DIO", "Edward", "Spike"]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [character, setCharacter] = useState();
+
+  const clickOnBackground = (e) => {
+    // Access menu list, set popup nearby where user clicks
+    const clickMenu = document.querySelector(".click-menu");
+    clickMenu.style.top = `${e.clientY - 2}px`;
+    clickMenu.style.left = `${e.clientX + 18}px`;
+    setModalOpen(true);
+
     // Get current width & height of image from useRef hook
     const imgWidth = Number(imgRef.current.width);
     const imgHeight = Number(imgRef.current.height);
-
-    const navbarOffset = 70; // Height of navbar (pixels)
-
+    
     // Get x & y coordinates (e.g. pageX in pixels), calculate % relative to img width/height
     const x = e.pageX / imgWidth * 100;
-    const y = (e.pageY - navbarOffset) / imgHeight * 100;
+    const y = (e.pageY - 70) / imgHeight * 100;
     
-    findCharacter(x, y);
+    setCharacter(findCharacter(x, y));
+  };
+
+  const closeModal = () => setModalOpen(false);
+
+  const selectCharacter = (char) => {
+    const handler = () => {
+      if (character === char) {
+        console.log(`You found ${character}!`);
+        // Add a modal at the top centre that shows 'You found character!';
+      } else {
+        console.log(`Keep trying!`);
+        // Add a modal at the top centre that shows 'Keep trying!';
+      }
+      setModalOpen(false);
+    };
+    return handler;
   };
 
   return (
     <div className="App">
+      
       <Navbar />
+      
       <img 
         src={backgroundImg} 
         className="waldo-background" 
         alt=""
-        onClick={getCoordinates}
+        onClick={(modalOpen) ? closeModal : clickOnBackground}
         ref={imgRef}
       />
+
+      {/* Popup Menu List */}
+      <ul className={(modalOpen) ? "click-menu" : "click-menu off"}>
+        {
+          chars.map((char, i) => (
+            <li 
+              key={i}
+              onClick={selectCharacter(char)}
+            >
+              {char}
+            </li>
+          ))
+        }
+      </ul>
+
     </div>
   );
 }

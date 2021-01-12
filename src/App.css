@@ -24,3 +24,28 @@ body {
   cursor: url("./images/crosshair3.png") 15 17, auto; /* Custom cursor img, offset x & y by 15 & 17 pixels */
   user-select: none; /* Remove highlight */
 }
+
+.click-menu {
+  display: block;
+  background-color: rgb(73, 73, 73);
+  color: white;
+  border: 1px solid white;
+  position: fixed;
+  cursor: pointer;
+}
+
+.click-menu li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  list-style-type: none;
+  border: 0.1rem white solid;
+  padding: 5px 10px 5px 10px;
+}
+
+.click-menu li:hover {
+  background-color: red;;
+}
+
+.off {
+  display: none;
+}

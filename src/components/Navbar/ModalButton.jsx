@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
-import PopupModal from './PopupModal';
+import CharacterModal from './CharacterModal';
 
-function OpenModalButton() {
+function ModalButton() {
   // Initialize variable state to determine if the SignOut modal is open/close
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -21,9 +21,9 @@ function OpenModalButton() {
           <h2>3</h2>
         </div>
       </OutsideClickHandler>
-      { (modalOpen) && <PopupModal /> }
+      { (modalOpen) && <CharacterModal /> }
     </div>
   );
 }
 
-export default OpenModalButton;
+export default ModalButton;
