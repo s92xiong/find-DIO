@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body {
   background-color: black;
   overflow-x: hidden;
@@ -25,25 +27,44 @@ body {
   user-select: none; /* Remove highlight */
 }
 
-.click-menu {
+.left-click-modal {
   display: block;
-  background-color: rgb(73, 73, 73);
-  color: white;
-  border: 1px solid white;
   position: fixed;
   cursor: pointer;
+  background-color: #d4d4d4cb;
+  color: #363636;
+  border-radius: 10px;
+  width: 95px;
+  border: 1px #ffffff solid;
 }
 
-.click-menu li {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  list-style-type: none;
-  border: 0.1rem white solid;
+.modal-li {
+  border: 0.05rem #ffffff solid;
   padding: 5px 10px 5px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-family: 'Pacifico', cursive;
+  list-style-type: none;
+  line-height: 30px;
 }
 
-.click-menu li:hover {
-  background-color: red;;
+.modal-li:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-li:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Last menu-modal item should have rounded edges on all sides */
+.last-item {
+  border-radius: 10px;
+}
+
+.left-click-modal li:hover {
+  background-color: #ffffff67;
 }
 
 .off {

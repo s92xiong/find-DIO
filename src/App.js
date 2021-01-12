@@ -16,9 +16,9 @@ function App() {
 
   const clickOnBackground = (e) => {
     // Access menu list, set popup nearby where user clicks
-    const clickMenu = document.querySelector(".click-menu");
-    clickMenu.style.top = `${e.clientY - 2}px`;
-    clickMenu.style.left = `${e.clientX + 18}px`;
+    const leftClickModal = document.querySelector(".left-click-modal");
+    leftClickModal.style.top = `${e.clientY - 2}px`;
+    leftClickModal.style.left = `${e.clientX + 18}px`;
     setModalOpen(true);
 
     // Get current width & height of image from useRef hook
@@ -62,12 +62,13 @@ function App() {
       />
 
       {/* Popup Menu List */}
-      <ul className={(modalOpen) ? "click-menu" : "click-menu off"}>
+      <ul className={(modalOpen) ? "left-click-modal" : "left-click-modal off"}>
         {
           chars.map((char, i) => (
             <li 
               key={i}
               onClick={selectCharacter(char)}
+              className={(chars.length === 1) ?  "modal-li last-item" : "modal-li"}
             >
               {char}
             </li>
