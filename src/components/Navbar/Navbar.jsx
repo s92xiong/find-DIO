@@ -5,7 +5,7 @@ import OpenModalButton from './OpenModalButton';
 function Navbar() {
   return (
     <div className="navbar">
-      <h1>Where's DIO?</h1>
+      <h1>find <span className="gold-title">DIO</span></h1>
       <h1>00:00</h1>
       <OpenModalButton />
     </div>
