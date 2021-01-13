@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar characters={characters} />
       <Background 
         menuOpen={menuOpen} 
         closeModal={closeModal} 

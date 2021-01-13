@@ -2,7 +2,7 @@ import React from 'react';
 import "./styles/Navbar.css";
 import NavButton from './NavButton';
 
-function Navbar() {
+function Navbar({ characters }) {
   return (
     <div className="navbar">
       <div className="nav-item">
@@ -11,7 +11,7 @@ function Navbar() {
       <div className="nav-item">
         <h1>00:00</h1>
       </div>
-      <NavButton className="nav-item" />
+      <NavButton className="nav-item" characters={characters} />
     </div>
   );
 }

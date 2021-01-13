@@ -2,8 +2,10 @@ import React from 'react';
 import dioImg from "../../images/dio.png";
 import spikeImg from "../../images/spike.png";
 import edImg from "../../images/ed.png";
+import CharacterStatus from './CharacterStatus';
 
-function DropdownMenu() {
+function DropdownMenu({ characters }) {
+
   return (
     <div className="dropdown-menu">
 
@@ -12,7 +14,7 @@ function DropdownMenu() {
         <div className="character-info">
           <h3 className="character-name">DIO</h3>
           <p>JoJo's Bizarre Adventure</p>
-          <p className="character-status">Not yet found</p>
+          <CharacterStatus characters={characters} char="DIO" />
         </div>
       </div>
 
@@ -21,7 +23,7 @@ function DropdownMenu() {
         <div className="character-info">
           <h3 className="character-name">Edward</h3>
           <p>Full Metal Alchemist</p>
-          <p className="character-status">Not yet found</p>
+          <CharacterStatus characters={characters} char="Edward" />
         </div>
       </div>
 
@@ -30,7 +32,7 @@ function DropdownMenu() {
         <div className="character-info">
           <h3 className="character-name">Spike</h3>
           <p >Cowboy Bebop</p>
-          <p className="character-status">Not yet found</p>
+          <CharacterStatus characters={characters} char="Spike" />
         </div>
       </div>
   

@@ -19,11 +19,11 @@
 }
 
 .alert-success {
-  background-color: green;
+  background-color: #27a327;
 }
 
 .alert-fail {
-  background-color: red;
+  background: #e70e32;
 }
 
 .alert-off {
