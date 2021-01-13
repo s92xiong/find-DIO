@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
+/* --------- STYLE NAVBAR --------- */
+.navbar {
+  width: 100vw;
+  height: 70px;
+  background: #2f2953;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Days One', serif;
+  font-size: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.gold-title {
+  color: rgb(228, 198, 31);
+  font-family: 'Libre Baskerville', serif;
+}

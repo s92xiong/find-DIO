@@ -1,39 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
-
-/* --------- STYLE NAVBAR --------- */
-.navbar {
-  width: 100vw;
-  height: 70px;
-  background: #2f2953;
-  color: #ffffff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: 'Days One', serif;
-  font-size: 15px;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.gold-title {
-  color: rgb(228, 198, 31);
-  font-family: 'Libre Baskerville', serif;
-}
-
 /* --------- STYLE MODAL BUTTON IN NAVBAR --------- */
 
-.modal-button-container {
+.nav-button-container {
   position: relative;
   user-select: none; /* Remove highlight */
 }
 
-.modal-button {
-  width: 40px;
+.nav-button {
+  width: 80px; /* For circular button, change width/height to 40x40 px */
   height: 40px;
   background: #e41235bb;
-  border-radius: 50%;
+  /* border-radius: 50%; */
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +18,7 @@
   transition: 200ms;
 }
 
-.modal-button:hover {
+.nav-button:hover {
   background: #e41235;
 }
 
@@ -51,7 +28,7 @@
 
 /* --------- STYLE POPUP MODAL AND ITS CHILD ELEMENTS --------- */
 
-.popup-modal {
+.dropdown-menu {
   position: absolute; /* Position div relative to .modal-button  */
   top: 54px;
   right: 0;

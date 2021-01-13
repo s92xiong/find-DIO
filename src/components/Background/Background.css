@@ -1,0 +1,7 @@
+.background-img {
+  width: 100%;
+  padding: 0;
+  margin: 70px 0 0 0;
+  cursor: url("../../images/crosshair3.png") 15 17, auto; /* Custom cursor img, offset x & y by 15 & 17 pixels */
+  user-select: none; /* Remove highlight */
+}

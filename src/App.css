@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 body {
   background-color: black;
   overflow-x: hidden;
@@ -17,56 +15,4 @@ body {
   height: auto;
   overflow: hidden;
   position: relative;
-}
-
-.waldo-background {
-  width: 100%;
-  padding: 0;
-  margin: 70px 0 0 0;
-  cursor: url("./images/crosshair3.png") 15 17, auto; /* Custom cursor img, offset x & y by 15 & 17 pixels */
-  user-select: none; /* Remove highlight */
-}
-
-.left-click-modal {
-  display: block;
-  position: fixed;
-  cursor: pointer;
-  background-color: #d4d4d4cb;
-  color: #363636;
-  border-radius: 10px;
-  width: 95px;
-  border: 1px #ffffff solid;
-}
-
-.modal-li {
-  border: 0.05rem #ffffff solid;
-  padding: 5px 10px 5px 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-family: 'Pacifico', cursive;
-  list-style-type: none;
-  line-height: 30px;
-}
-
-.modal-li:first-child {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.modal-li:last-child {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-/* Last menu-modal item should have rounded edges on all sides */
-.last-item {
-  border-radius: 10px;
-}
-
-.left-click-modal li:hover {
-  background-color: #ffffff67;
-}
-
-.off {
-  display: none;
 }

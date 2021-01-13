@@ -3,9 +3,9 @@ import dioImg from "../../images/dio.png";
 import spikeImg from "../../images/spike.png";
 import edImg from "../../images/ed.png";
 
-function CharacterModal() {
+function DropdownMenu() {
   return (
-    <div className="popup-modal">
+    <div className="dropdown-menu">
 
       <div className="character">
         <img src={dioImg} alt="" className="character-img dio-img" />
@@ -38,4 +38,4 @@ function CharacterModal() {
   );
 }
 
-export default CharacterModal;
+export default DropdownMenu;
