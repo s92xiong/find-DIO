@@ -1,14 +1,17 @@
 import findCharacter from "./findCharacter";
 
-const eventHandlers = (imgRef, setModalOpen, currentCharacter, setCurrentCharacter, characters, setCharacters) => {
+const eventHandlers = (imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, characters, setCharacters, alert, setAlert) => {
 
 
   const clickOnBackground = (e) => {
+    // User can open left-click menu only if the alert box is closed
+    if (alert.alertOpen && alert.success) return;
+
     // Access menu list, set popup nearby where user clicks
     const clickModal = document.querySelector(".left-click-modal");
     clickModal.style.top = `${e.clientY - 2}px`;
     clickModal.style.left = `${e.clientX + 18}px`;
-    setModalOpen(true);
+    setMenuOpen(true);
 
     // Get current width & height of image from useRef hook
     const imgWidth = Number(imgRef.current.width);
@@ -24,22 +27,32 @@ const eventHandlers = (imgRef, setModalOpen, currentCharacter, setCurrentCharact
 
   const selectCharacter = (character) => {
     const handler = () => {
-      setModalOpen(false); 
-
+      // Close left-click menu after selecting a character
+      setMenuOpen(false); 
+      
+      // Alert the user that they did not find the character
       if (currentCharacter !== character) {
-        return console.log("Keep trying!");
+        return setAlert({ 
+          alertOpen: true, 
+          success: false 
+        });
       }
-
+      
+      // If user finds the character, remove character from [characters]
       const newCharacters = characters.filter(char => char !== currentCharacter);
       setCharacters(newCharacters);
-      // console.log(`You found ${currentCharacter}!`);
-      console.table(newCharacters);
+
+      // Alert user for successfully finding character
+      return setAlert({ 
+        alertOpen: true, 
+        success: true 
+      });
     };
     return handler;
   };
 
 
-  const closeModal = () => setModalOpen(false);
+  const closeModal = () => setMenuOpen(false);
 
 
   return {

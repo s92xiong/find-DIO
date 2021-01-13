@@ -8,7 +8,7 @@ const findCharacter = (x, y) => {
   } else if (x >= Edward.x1 && x <= Edward.x2 && y >= Edward.y1 && y <= Edward.y2) {
     return "Edward";
   } else {
-    return "Keep trying";
+    return null;
   }
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import "./ContextMenu.css";
 
-function LeftClickModal({ modalOpen, characters, selectCharacter }) {
+function ContextMenu({ menuOpen, characters, selectCharacter }) {
   return (
-    <ul className={(modalOpen) ? "left-click-modal" : "left-click-modal off"}>
+    <ul className={(menuOpen) ? "left-click-modal" : "left-click-modal off"}>
       {
         characters.map((char, i) => (
           <li 
@@ -19,4 +19,4 @@ function LeftClickModal({ modalOpen, characters, selectCharacter }) {
   );
 }
 
-export default LeftClickModal;
+export default ContextMenu;
