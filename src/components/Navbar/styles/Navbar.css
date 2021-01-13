@@ -7,14 +7,22 @@
   height: 70px;
   background: #2f2953;
   color: #ffffff;
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   font-family: 'Days One', serif;
   font-size: 15px;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gold-title {

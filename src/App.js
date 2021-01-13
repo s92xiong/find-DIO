@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import LeftClickModal from "./components/ContextMenu/ContextMenu";
-import BackgroundImg from "./components/Background/Background";
+import Background from "./components/Background/Background";
 import eventHandlers from "./logic/eventHandlers";
+import Alert from "./components/Alert/Alert";
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <BackgroundImg 
+      <Background 
         modalOpen={modalOpen} 
         closeModal={closeModal} 
         handleClick={clickOnBackground} 
@@ -39,6 +40,7 @@ function App() {
         characters={characters} 
         selectCharacter={selectCharacter}
       />
+      <Alert />
     </div>
   );
 }

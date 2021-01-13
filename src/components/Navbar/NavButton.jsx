@@ -3,7 +3,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import DropdownMenu from './DropdownMenu';
 import "./styles/NavButton.css";
 
-function NavButton() {
+function NavButton(props) {
   // Initialize variable state to determine if the SignOut modal is open/close
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -16,13 +16,15 @@ function NavButton() {
   });
 
   return (
-    <div className="nav-button-container">
-      <OutsideClickHandler onOutsideClick={closeModal}>
-        <div className={(modalOpen) ? "nav-button button-active" : "nav-button"} onClick={openModal}>
-          <h2>Help</h2>
-        </div>
-      </OutsideClickHandler>
-      { (modalOpen) && <DropdownMenu /> }
+    <div className={props.className}>
+      <div className="nav-button-container">
+        <OutsideClickHandler onOutsideClick={closeModal}>
+          <div className={(modalOpen) ? "nav-button button-active" : "nav-button"} onClick={openModal}>
+            <h2>Help</h2>
+          </div>
+        </OutsideClickHandler>
+        { (modalOpen) && <DropdownMenu /> }
+      </div>
     </div>
   );
 }
