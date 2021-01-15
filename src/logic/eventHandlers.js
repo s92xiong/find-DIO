@@ -1,6 +1,9 @@
 import findCharacter from "./findCharacter";
 
-const eventHandlers = (imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, characters, setCharacters, alert, setAlert) => {
+const eventHandlers = (
+    imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, 
+    characters, setCharacters, alert, setAlert,
+  ) => {
 
 
   const clickOnBackground = (e) => {
@@ -54,11 +57,10 @@ const eventHandlers = (imgRef, setMenuOpen, currentCharacter, setCurrentCharacte
 
   const closeModal = () => setMenuOpen(false);
 
-
   return {
     clickOnBackground,
     selectCharacter,
-    closeModal,
+    closeModal
   };
 };
 

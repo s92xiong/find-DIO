@@ -22,7 +22,7 @@ function DropdownMenu({ characters }) {
         <img src={edImg} alt="" className="character-img edward-img" />
         <div className="character-info">
           <h3 className="character-name">Edward</h3>
-          <p>Full Metal Alchemist</p>
+          <p>Fullmetal Alchemist</p>
           <CharacterStatus characters={characters} char="Edward" />
         </div>
       </div>

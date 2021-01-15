@@ -6,7 +6,7 @@
   width: 100vw;
   height: 70px;
   background: #2f2953;
-  color: #ffffff;
+  color: #f7f7f7;
   /* display: flex;
   justify-content: space-around;
   align-items: center; */
@@ -25,7 +25,11 @@
   align-items: center;
 }
 
+/* .find-h1 {
+  color: #4ac6ca;
+} */
+
 .gold-title {
-  color: rgb(228, 198, 31);
+  color: #e4c61f;
   font-family: 'Libre Baskerville', serif;
 }

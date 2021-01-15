@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+.game-won {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-won-modal {
+  width: 700px;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 20px;
+  font-family: 'Mitr', sans-serif;
+}
+
+.high-scores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.high-scores h2 {
+  margin: 10px;
+  font-size: 28px;
+}
+
+.high-scores li {
+  margin: 6px;
+  font-size: 18px;
+}
+
+.user-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-score > * {
+  margin: 10px;
+}
