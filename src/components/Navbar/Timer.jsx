@@ -26,8 +26,8 @@ function Timer({ className, setWinTime, timerOn, gameWon }) {
         
         // Record time as (1): string in HH/MM/SS, and (2): Seconds
         setWinTime({
-          string: `${computedHour}:${computedMinute}:${computedSecond}`,
-          secondCount: counter,
+          timeInSeconds: counter,
+          timeInString: `${computedHour}:${computedMinute}:${computedSecond}`,
         });
         
         setCounter((counter) => counter + 1);

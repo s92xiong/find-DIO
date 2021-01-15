@@ -7,6 +7,7 @@ import eventHandlers from "./logic/eventHandlers";
 import Alert from "./components/Alert/Alert";
 import StartGame from "./components/StartGame/StartGame";
 import GameWon from "./components/GameWon/GameWon";
+import getHighScores from "./logic/getHighScores";
 
 function App() {
 
@@ -31,8 +32,10 @@ function App() {
   // Keep track of whether or not the timer is on
   const [timerOn, setTimerOn] = useState(true);
 
-  //
   const [winTime, setWinTime] = useState({});
+
+  const [inputHighScore, setInputHighScore] = useState("");
+  const [highScores, setHighScores] = useState();
 
   useEffect(() => {
     // Close alert box after 2 seconds
@@ -43,24 +46,29 @@ function App() {
     }
 
     // Game is won if there are no users left in the characters array
-    if (characters.length < 1) {
+    if (gameWon) {
+      getHighScores(setHighScores);
       setGameWon(true);
       setTimerOn(false);
     }
   }, [alert, characters, gameWon]);
 
-  const { 
-    clickOnBackground, 
-    selectCharacter, 
-    closeModal,
-  } = eventHandlers(
+  const { clickOnBackground, selectCharacter, closeModal, restartGame, submitHighScore } = 
+  eventHandlers(
     imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, 
-    characters, setCharacters, alert, setAlert, setTimerOn
+    characters, setCharacters, alert, setAlert, setGameStarted, 
+    setGameWon, winTime, setWinTime, inputHighScore
   );
 
   if (gameWon) {
     return (
-      <GameWon />
+      <GameWon 
+        restartGame={restartGame}
+        highScores={highScores}
+        winTime={winTime}
+        setInputHighScore={setInputHighScore}
+        submitHighScore={submitHighScore}
+      />
     );
   }
 
@@ -68,7 +76,7 @@ function App() {
     <div className="App">
       {
         (!gameStarted) ? 
-        <StartGame setGameStarted={setGameStarted} />
+        <StartGame setGameStarted={setGameStarted} setTimerOn={setTimerOn} />
         :
         <div className="game-container">
           <Navbar 

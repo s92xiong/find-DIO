@@ -7,9 +7,11 @@ import jojoImg from "../../images/Jojo.png";
 // import edImg from "../../images/ed.png";
 // import Character from './Character';
 
-function StartGame({ setGameStarted }) {
-
-  const startGame = () => setGameStarted(true);
+function StartGame({ setGameStarted, setTimerOn }) {
+  const startGame = () => {
+    setGameStarted(true);
+    setTimerOn(true);
+  };
 
   return (
     <div className="start-game">

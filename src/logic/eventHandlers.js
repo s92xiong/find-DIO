@@ -1,8 +1,10 @@
+import { firestore } from "../firebase";
 import findCharacter from "./findCharacter";
 
 const eventHandlers = (
     imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, 
-    characters, setCharacters, alert, setAlert,
+    characters, setCharacters, alert, setAlert, setGameStarted, 
+    setGameWon, winTime, setWinTime, inputHighScore
   ) => {
 
 
@@ -43,6 +45,7 @@ const eventHandlers = (
       
       // If user finds the character, remove character from [characters]
       const newCharacters = characters.filter(char => char !== currentCharacter);
+      if (newCharacters.length < 1) setGameWon(true);
       setCharacters(newCharacters);
 
       // Alert user for successfully finding character
@@ -56,11 +59,37 @@ const eventHandlers = (
 
 
   const closeModal = () => setMenuOpen(false);
+  
+  const restartGame = () => {
+    setCharacters(["DIO", "Edward", "Spike"]);
+    setGameStarted(false);
+    setGameWon(false)
+    setCurrentCharacter(null);
+    // setTimerOn(false);
+    setWinTime({});
+  };
+
+  const submitHighScore = (e) => {
+    e.preventDefault();
+
+    // Add the new document/category to the db, set active to true
+    firestore.collection("high-scores").add({
+      name: inputHighScore,
+      timeInSeconds: winTime.timeInSeconds,
+      timeInString: winTime.timeInString,
+    })
+    .then(() => {
+      console.log("The highscore has been submitted!");
+      restartGame();
+    }).catch(error => console.error(`Error adding category: ${error}`));
+  };
 
   return {
     clickOnBackground,
     selectCharacter,
-    closeModal
+    closeModal,
+    restartGame,
+    submitHighScore
   };
 };
 
