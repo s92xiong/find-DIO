@@ -17,7 +17,7 @@ function StartGame({ setGameStarted, setTimerOn }) {
     <div className="start-game">
       <div className="start-game-modal">
         <div className="left-side-modal">
-          <h1>find <span className="dio-span">DIO</span></h1>
+          <h1>Find <span className="dio-span">DIO</span></h1>
           <img className="jojo-img" src={jojoImg} alt=""/>
           <p>Help the Joestars find their enemy <span className="dio-span">DIO</span> and his two minions, <span className="ed-span">Edward Elric</span> and <span className="spike-span">Spike Spiegel</span></p>
         </div>

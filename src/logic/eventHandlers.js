@@ -57,7 +57,6 @@ const eventHandlers = (
     return handler;
   };
 
-
   const closeModal = () => setMenuOpen(false);
   
   const restartGame = () => {
@@ -71,17 +70,14 @@ const eventHandlers = (
 
   const submitHighScore = (e) => {
     e.preventDefault();
+    if (inputHighScore.length < 1) return;
 
     // Add the new document/category to the db, set active to true
     firestore.collection("high-scores").add({
       name: inputHighScore,
       timeInSeconds: winTime.timeInSeconds,
       timeInString: winTime.timeInString,
-    })
-    .then(() => {
-      console.log("The highscore has been submitted!");
-      restartGame();
-    }).catch(error => console.error(`Error adding category: ${error}`));
+    }).then(() => restartGame()).catch(error => console.error(error));
   };
 
   return {

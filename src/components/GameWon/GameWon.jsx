@@ -6,11 +6,9 @@ function GameWon({ restartGame, highScores, winTime, setInputHighScore, submitHi
 
   const handleInputFieldChange = (e) => setInputHighScore(e.target.value.toUpperCase());
 
-  if (!highScores) { 
-    return <></>;
-  }
+  if (!highScores) return <></>;
 
-  (highScores.length < 10 || winTime.timeInSeconds < highScores[9]) && console.log("Score is a highscore!");
+  // (highScores.length < 10 || winTime.timeInSeconds < highScores[9]) && console.log("Score is a highscore!");
   
   return (
     <div className="game-won">
@@ -22,14 +20,14 @@ function GameWon({ restartGame, highScores, winTime, setInputHighScore, submitHi
           </ol>
         </div>
         {
-          (highScores.length < 10 || winTime.timeInSeconds < highScores[9]) ?
+          (highScores.length < 10 || winTime.timeInSeconds < highScores[9].timeInSeconds) ?
           <div className="user-score">
             <h1>Add Your Score</h1>
             <h2>Time</h2>
             <p>{winTime.timeInString}</p>
             <form onSubmit={submitHighScore} className="user-score-form">
               <input onChange={handleInputFieldChange} type="text" maxLength="4"/>
-              <button>Submit</button>
+              <button className="submit-high-score-button">Submit</button>
             </form>
           </div>
           :
