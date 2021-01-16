@@ -34,7 +34,10 @@ function App() {
 
   const [winTime, setWinTime] = useState({});
 
+  // Input field to add HighScore
   const [inputHighScore, setInputHighScore] = useState("");
+
+  // Array of highscores obtained from Firestore db in real time
   const [highScores, setHighScores] = useState();
 
   useEffect(() => {
@@ -57,7 +60,7 @@ function App() {
   eventHandlers(
     imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, 
     characters, setCharacters, alert, setAlert, setGameStarted, 
-    setGameWon, winTime, setWinTime, inputHighScore
+    setGameWon, winTime, setWinTime, inputHighScore, setInputHighScore
   );
 
   if (gameWon) {

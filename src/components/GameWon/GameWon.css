@@ -18,6 +18,10 @@
   font-family: 'Mitr', sans-serif;
 }
 
+.form-off {
+  display: none;
+}
+
 .high-scores {
   display: flex;
   flex-direction: column;

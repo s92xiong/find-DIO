@@ -26,7 +26,7 @@ function GameWon({ restartGame, highScores, winTime, setInputHighScore, submitHi
             <h2>Time</h2>
             <p>{winTime.timeInString}</p>
             <form onSubmit={submitHighScore} className="user-score-form">
-              <input onChange={handleInputFieldChange} type="text" maxLength="4"/>
+              <input id="inputHighscore" onChange={handleInputFieldChange} type="text" maxLength="4" autoComplete="off" />
               <button className="submit-high-score-button">Submit</button>
             </form>
           </div>

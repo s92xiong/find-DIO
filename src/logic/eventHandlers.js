@@ -4,7 +4,7 @@ import findCharacter from "./findCharacter";
 const eventHandlers = (
     imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, 
     characters, setCharacters, alert, setAlert, setGameStarted, 
-    setGameWon, winTime, setWinTime, inputHighScore
+    setGameWon, winTime, setWinTime, inputHighScore, setInputHighScore
   ) => {
 
 
@@ -70,14 +70,20 @@ const eventHandlers = (
 
   const submitHighScore = (e) => {
     e.preventDefault();
+    
     if (inputHighScore.length < 1) return;
+    const inputValue = document.querySelector("#inputHighscore");
+    inputValue.value = "";
+    setInputHighScore("");
 
     // Add the new document/category to the db, set active to true
     firestore.collection("high-scores").add({
       name: inputHighScore,
       timeInSeconds: winTime.timeInSeconds,
       timeInString: winTime.timeInString,
-    }).then(() => restartGame()).catch(error => console.error(error));
+    }).then(() => {
+      setTimeout(() => restartGame(), 2000);
+    }).catch(error => console.error(error));
   };
 
   return {
