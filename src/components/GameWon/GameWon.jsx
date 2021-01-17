@@ -7,8 +7,6 @@ function GameWon({ restartGame, highScores, winTime, setInputHighScore, submitHi
   const handleInputFieldChange = (e) => setInputHighScore(e.target.value.toUpperCase());
 
   if (!highScores) return <></>;
-
-  // (highScores.length < 10 || winTime.timeInSeconds < highScores[9]) && console.log("Score is a highscore!");
   
   return (
     <div className="game-won">
