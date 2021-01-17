@@ -87,6 +87,7 @@ function App() {
             setWinTime={setWinTime}
             timerOn={timerOn}
             gameWon={gameWon}
+            setMenuOpen={setMenuOpen}
           />
           <Background 
             menuOpen={menuOpen} 

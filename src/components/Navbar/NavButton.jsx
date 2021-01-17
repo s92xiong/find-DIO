@@ -3,12 +3,15 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import DropdownMenu from './DropdownMenu';
 import "./styles/NavButton.css";
 
-function NavButton({ className, characters }) {
+function NavButton({ className, characters, setMenuOpen }) {
   // Initialize variable state to determine if the SignOut modal is open/close
   const [modalOpen, setModalOpen] = useState(false);
 
   // Event handlers to open/close modal
-  const openModal = () => setModalOpen(!modalOpen);
+  const openModal = () => {
+    setModalOpen(!modalOpen);
+    setMenuOpen(false);
+  }
   const closeModal = (e) => (e.target.className === "background-img") && setModalOpen(false);
 
   useEffect(() => {
