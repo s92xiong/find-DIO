@@ -5,7 +5,7 @@ import ContextMenu from "./components/ContextMenu/ContextMenu";
 import Background from "./components/Background/Background";
 import eventHandlers from "./logic/eventHandlers";
 import Alert from "./components/Alert/Alert";
-import StartGame from "./components/StartGame/StartGame";
+import GameStart from "./components/GameStart/GameStart";
 import GameWon from "./components/GameWon/GameWon";
 import getHighScores from "./logic/getHighScores";
 
@@ -79,7 +79,7 @@ function App() {
     <div className="App">
       {
         (!gameStarted) ? 
-        <StartGame setGameStarted={setGameStarted} setTimerOn={setTimerOn} />
+        <GameStart setGameStarted={setGameStarted} setTimerOn={setTimerOn} />
         :
         <div className="game-container">
           <Navbar 

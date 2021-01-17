@@ -1,21 +1,17 @@
 import React from 'react';
-import "./StartGame.css";
+import "./GameStart.css";
 import jojoImg from "../../images/Jojo.png";
 
-// import dioImg from "../../images/dio.png";
-// import spikeImg from "../../images/spike.png";
-// import edImg from "../../images/ed.png";
-// import Character from './Character';
-
-function StartGame({ setGameStarted, setTimerOn }) {
+function GameStart({ setGameStarted, setTimerOn }) {
+  
   const startGame = () => {
     setGameStarted(true);
     setTimerOn(true);
   };
 
   return (
-    <div className="start-game">
-      <div className="start-game-modal">
+    <div className="game-start">
+      <div className="game-start-modal">
         <div className="left-side-modal">
           <h1>Find <span className="dio-span">DIO</span></h1>
           <img className="jojo-img" src={jojoImg} alt=""/>
@@ -23,10 +19,11 @@ function StartGame({ setGameStarted, setTimerOn }) {
         </div>
         <div className="right-side-modal">
           <button onClick={startGame}>Start</button>
+          <p className="artist"><a href="https://www.artstation.com/chekavo">Image by Egor Klyuchnyk</a></p>
         </div>
       </div>
     </div>
   );
 }
 
-export default StartGame;
+export default GameStart;

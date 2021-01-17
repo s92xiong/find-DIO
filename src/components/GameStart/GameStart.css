@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
 
-.start-game {
+.game-start {
   width: 100vw;
   height: 100vh;
   background-color: #252525;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.start-game-modal {
+.game-start-modal {
   width: 850px;
   height: 500px;
   background-color: #292929;
@@ -80,6 +80,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 button {
@@ -100,12 +101,26 @@ button:hover {
   border: 2px solid rgb(255, 255, 255);
 }
 
+.artist a {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  color: rgb(197, 190, 190);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.artist a:hover {
+  text-decoration: underline;
+  color: hotpink;
+}
+
 @media (max-width: 500px) {
-  .start-game {
+  .game-start {
     background-color: black;
   }
   
-  .start-game-modal {
+  .game-start-modal {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -131,5 +146,9 @@ button:hover {
 
   button {
     margin: 50px 0 0 0;
+  }
+
+  .artist {
+    display: none;
   }
 }
