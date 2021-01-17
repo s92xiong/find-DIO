@@ -57,7 +57,7 @@ function App() {
 
   const {
     // Event handler methods
-    clickOnBackground, selectCharacter, closeModal, restartGame, submitHighScore 
+    clickOnBackground, selectCharacter, restartGame, submitHighScore 
   } = eventHandlers(
     // State arguments
     imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, 
@@ -93,7 +93,7 @@ function App() {
           />
           <Background 
             menuOpen={menuOpen} 
-            closeModal={closeModal} 
+            setMenuOpen={setMenuOpen}
             handleClick={clickOnBackground} 
             handleRef={imgRef}
           />

@@ -56,9 +56,9 @@ const eventHandlers = (
     };
     return handler;
   };
-
-  const closeModal = () => setMenuOpen(false);
   
+
+  // RESET STATE VARIABLES TO THEIR STARTING VALUES
   const restartGame = () => {
     setCharacters(["DIO", "Edward", "Spike"]);
     setGameStarted(false);
@@ -68,6 +68,8 @@ const eventHandlers = (
     setWinTime({});
   };
 
+
+  // ADD HIGH SCORE TO FIRESTORE DB
   const submitHighScore = (e) => {
     e.preventDefault();
     
@@ -89,7 +91,6 @@ const eventHandlers = (
   return {
     clickOnBackground,
     selectCharacter,
-    closeModal,
     restartGame,
     submitHighScore
   };
