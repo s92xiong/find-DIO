@@ -10,7 +10,6 @@ import GameWon from "./components/GameWon/GameWon";
 import getHighScores from "./logic/getHighScores";
 
 function App() {
-
   const [gameStarted, setGameStarted] = useState(false);
   const [gameWon, setGameWon] = useState(false);
 
@@ -20,18 +19,19 @@ function App() {
   // Characters to find in game
   const [characters, setCharacters] = useState(["DIO", "Edward", "Spike"]);
 
-  // Open/close left-click menu
+  // Left-click menu open/close
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // If user successfully targets a character, store this character into variable state
+  // Character that has been found in game
   const [currentCharacter, setCurrentCharacter] = useState();
 
   // Determine if alert box is ON/OFF - provides feedback so user knows if they are successful
   const [alert, setAlert] = useState({ alertOpen: false, success: false });
 
-  // Keep track of whether or not the timer is on
+  // Track timer
   const [timerOn, setTimerOn] = useState(true);
 
+  // Record win time as a string "00:00:00" and as an integer in seconds
   const [winTime, setWinTime] = useState({});
 
   // Input field to add HighScore
@@ -48,16 +48,18 @@ function App() {
       }, 2000);
     }
 
-    // Game is won if there are no users left in the characters array
     if (gameWon) {
       getHighScores(setHighScores);
       setGameWon(true);
       setTimerOn(false);
     }
-  }, [alert, characters, gameWon]);
+  }, [alert, gameWon]);
 
-  const { clickOnBackground, selectCharacter, closeModal, restartGame, submitHighScore } = 
-  eventHandlers(
+  const {
+    // Event handler methods
+    clickOnBackground, selectCharacter, closeModal, restartGame, submitHighScore 
+  } = eventHandlers(
+    // State arguments
     imgRef, setMenuOpen, currentCharacter, setCurrentCharacter, 
     characters, setCharacters, alert, setAlert, setGameStarted, 
     setGameWon, winTime, setWinTime, inputHighScore, setInputHighScore

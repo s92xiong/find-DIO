@@ -12,6 +12,7 @@ function NavButton({ className, characters, setMenuOpen }) {
     setModalOpen(!modalOpen);
     setMenuOpen(false);
   }
+  
   const closeModal = (e) => (e.target.className === "background-img") && setModalOpen(false);
 
   useEffect(() => {
