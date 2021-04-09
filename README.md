@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Find Dio - Documentation
+A mini game based on "Where's Waldo?", a series of children's puzzle books. Link to website: []
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About This Project
+Find Dio is a mini game influenced by "Where's Waldo?", where users must find the character DIO from JoJo's Bizarre Adventure and his two minions: Edward Elric and Spike Spiegel. 
 
-In the project directory, you can run:
+**How to play:**
+Use the mouse cursor (crosshair) and left click on any location in the background image to prompt a popup box: then select a character you think you found. If you did not successfully find a character in the list of required characters, the program will let you know you missed, otherwise the program will tell you which character you successfully found!
 
-### `npm start`
+**How to win:**
+Users must successfully target and correctly select all 3 characters: Dio Brando, Spike Spiegel, and Edward Elric. They are all hidden on the map somewhere... But where could they be!? Only you can find them!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Image Preview:
+![imagePreview](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.34.18%20PM.png?alt=media&token=47129806-c707-4440-a10e-cc85051f4d65)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Frameworks
+This project was built using React (Create React App) and Firebase. The Firebase services used in this project are Firestore and Hosting.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
+* Custom cursor icon
+* Timer
+* Add high scores
+* Accomdates different window sizes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Dependencies
+```
+npm install dotenv
+npm install firebase
+npm install react-outside-click-handler
+npm install -g firebase-tools
+```
 
-### `npm run eject`
+### Installation and Firebase setup
+* Create a new Firebase project
+* Go to *Project Overview* and register a web app
+* Activate Firestore
+  * Create a collection called ```high-scores```
+* Fork & clone the repository
+* Add Firebase credentials
+  * ```npm install dotenv```
+  * ```npm install firebase```
+  * In the root folder of the respository, create a file called *.env.local*
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The .env.local file should have the following:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+REACT_APP_API_KEY=apiKeyValue
+REACT_APP_AUTH_DOMAIN=authDomainValue
+REACT_APP_DATABASE_URL=projectIdValue
+REACT_APP_PROJECT_ID=storageBucketValue
+REACT_APP_STORAGE_BUCKET=messagingSenderIdValue
+REACT_APP_MESSAGING_SENDER_ID=appIdValue
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Reusable generic components
 
-## Learn More
+### Timer.jsx:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Implement a timer for a game that tracks time in the format of HH:MM:SS.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In order to properly use this component, the user must initialize some React State:
 
-### Code Splitting
+```const [winTime, setWinTime] = useState({});```
+```const [timerOn, setTimerOn] = useState(true);```
+```const [gameWon, setGameWon] = useState(false);```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+setWinTime={setWinTime} timerOn={timerOn} gameWon={gameWon}
 
-### Analyzing the Bundle Size
+*Timer.jsx* takes four props: 
+1. className - for styling purposes
+2. setWinTime - updates state to determine the time the user won the game
+3. timerOn - boolean that determines if the timer is actively running
+4. gameWon - boolean to determine if the game has been won
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[CodeImage](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.47.38%20PM.png?alt=media&token=57d8adcd-e5fd-4eae-a3b7-547ac83a76a9)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[timerImage](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.48.47%20PM.png?alt=media&token=3ba81048-1299-4fdb-ac00-9cc445f3cd9b)
