@@ -15,7 +15,9 @@ Users must successfully target and correctly select all 3 characters: Dio Brando
 If a user is having trouble finding the characters, the "Help" button provides images of what the characters look like and display whether or not they have been found.
 
 Image Preview:
-![imagePreview](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.34.18%20PM.png?alt=media&token=47129806-c707-4440-a10e-cc85051f4d65)
+![imagePreview0](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.34.18%20PM.png?alt=media&token=47129806-c707-4440-a10e-cc85051f4d65)
+
+![imagePreview1](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%209.03.04%20PM.png?alt=media&token=91bba6ac-aaef-4044-be10-d78860aa2a3c)
 
 
 ## Frameworks
