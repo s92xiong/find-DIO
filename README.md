@@ -1,9 +1,9 @@
-# Find Dio - Documentation
+# Find DIO - Documentation
 A mini game based on "Where's Waldo?", a series of children's puzzle books. [Link to project](https://waldo-react-d81e7.firebaseapp.com/).
 
 
 ## About This Project
-Find Dio is a fun mini game influenced by "Where's Waldo?", where users must find the character DIO (Dio Brando) from JoJo's Bizarre Adventure and his two minions: Edward Elric and Spike Spiegel. 
+Find DIO is a fun mini game influenced by "Where's Waldo?", where users must find the character DIO (Dio Brando) from JoJo's Bizarre Adventure and his two minions: Edward Elric and Spike Spiegel. 
 
 **How to play:**
 Use the mouse cursor (crosshair) and left click on any location in the background image to prompt a popup box: then select the character you think you found. If you did not successfully find a character in the list of required characters, the program will let you know you missed, otherwise the program will tell you which character you successfully found!
