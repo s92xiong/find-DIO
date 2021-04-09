@@ -84,6 +84,6 @@ const [gameWon, setGameWon] = useState(false);
 3. timerOn - boolean that determines if the timer is actively running
 4. gameWon - boolean checks if the game is won
 
-[CodeImage](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.47.38%20PM.png?alt=media&token=57d8adcd-e5fd-4eae-a3b7-547ac83a76a9)
+![CodeImage](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.47.38%20PM.png?alt=media&token=57d8adcd-e5fd-4eae-a3b7-547ac83a76a9)
 
-[timerImage](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.48.47%20PM.png?alt=media&token=3ba81048-1299-4fdb-ac00-9cc445f3cd9b)
+![timerImage](https://firebasestorage.googleapis.com/v0/b/waldo-react-d81e7.appspot.com/o/Screen%20Shot%202021-04-08%20at%208.48.47%20PM.png?alt=media&token=3ba81048-1299-4fdb-ac00-9cc445f3cd9b)
